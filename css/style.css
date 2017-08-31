@@ -1,49 +1,3 @@
-/*
---------------------------------------------------------*
-
-[Cadeniuc, Main Stylesheet ]
-
-    Color        : BLUE ( #00B6F9 )
-
-    Name         : JOHN - Responsive Onepage Resume Template
-
-    Version      :  1.0
-
-    Author       :  Cadeniuc
-
-    Author URI   :  https://themeforest.net/user/cadeniuc
-
-    Author Email : icadeniuc16@gmail.com
-
-
---------------------------------------------------------
-
---------------------------------------------------------
-
-   TABLE OF CONTENTS:
-  ====================
-
-    1 ) Font Import From Google Fonts
-
-    2 ) Preloader Styles
-
-    3 ) General Rulas
-
-    4 ) FIRST SCREEN  Styles
-        4.1 Hamburger Menu
-
-    5 ) SECOND SCREEN  Styles
-
-    6 ) THIRD SCREEN  Styles
-
-    7 ) FOURTH SCREEN  Styles
-
-    8 ) FIFTH SCREEN   Styles
-    9 ) ADD LASTTEST STYLES
-
-
---------------------------------------------------------
-*/
 
 /*-----------------------------------
     1 ) Font Import From Google Fonts
@@ -55,175 +9,101 @@
     2 ) Preloader Styles
 ----------------------*/
 
-  /*----------------------
-                       2 ) Preloader Styles
-                      ----------------------*/
-
-#preloader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #1a1b23;
-    z-index: 10000;
+/* ==========================================================
+! 3. Page loader
+========================================================== */
+div.homepara:first-letter {
+  font-size: 103px;
+  color: #fff;
+  margin-left: -40px;
+}
+.side-menu-name {
+  color: #fafafa;
+      opacity: 0.9;
+      text-align: center;
+      font-size: 22px;
+      text-transform: uppercase;
+      padding-left: 30px;
+      padding-right: 2px;
+      padding-top: 0px;
+      padding-bottom: 8px;
+      font-weight: 200;
+}
+.side-menu-job {
+      margin-bottom: 39px;
+      /* text-align: center; */
+      /* font-weight: 200; */
+      /* font-size: 12px; */
+      /* margin-top: 0px; */
+      color: #fafafa;
+      /* border: 2px solid #fafafa; */
+      opacity: 0.9;
+      text-align: center;
+      font-size: 22px;
+      text-transform: uppercase;
+      padding-left: 30px;
+      padding-right: 2px;
+      padding-top: 0px;
+      padding-bottom: 8px;
+      font-weight: 200;
 }
 
-.loader {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 30px;
-    height: 30px;
-    -webkit-transform: translate(-50%, -50%) rotate(45deg) translate3d(0, 0, 0);
-    -moz-transform: translate(-50%, -50%) rotate(45deg) translate3d(0, 0, 0);
-    -ms-transform: translate(-50%, -50%) rotate(45deg) translate3d(0, 0, 0);
-    -o-transform: translate(-50%, -50%) rotate(45deg) translate3d(0, 0, 0);
-    transform: translate(-50%, -50%) rotate(45deg) translate3d(0, 0, 0);
-    -webkit-animation: loader 1.2s infinite ease-in-out;
-    animation: loader 1.2s infinite ease-in-out;
+#page-loader {
+  width: 100%;
+  height: 100%;
+  background: #000;
+  /*color: #249991;*/
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
 }
-
-.loader span {
-    position: absolute;
-    display: block;
-    width: 20px;
-    height: 20px;
-    opacity: 0.8;
-    background-color: #00B6F9;
-    -webkit-animation: loaderBlock 1.2s infinite ease-in-out both;
-    animation: loaderBlock 1.2s infinite ease-in-out both;
+.loading-wrapper {
+  width: 250px;
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  margin-left: -125px;
 }
-
-.loader span:nth-child(1) {
-    top: 0;
-    left: 0;
+.tp-loader {
+  z-index: 10000;
+  position: relative;
 }
-
-.loader span:nth-child(2) {
-    top: 0;
-    right: 0;
-    -webkit-animation: loaderBlockInverse 1.2s infinite ease-in-out both;
-    animation: loaderBlockInverse 1.2s infinite ease-in-out both;
+.tp-loader.spinner {
+  width: 30px;
+      height: 30px;
+      /* margin: 0 auto; */
+      margin-bottom: -35px;
+      /* background-color: #fff; */
+      box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.15);
+      -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.15);
+      -webkit-animation: tp-rotateplane 1.2s infinite ease-in-out;
+      animation: tp-rotateplane 1.2s infinite ease-in-out;
+      border-radius: 3px;
+      -moz-border-radius: 3px;
+      -webkit-border-radius: 3px;
 }
-
-.loader span:nth-child(3) {
-    bottom: 0;
-    left: 0;
-    -webkit-animation: loaderBlockInverse 1.2s infinite ease-in-out both;
-    animation: loaderBlockInverse 1.2s infinite ease-in-out both;
+.bypostauthor{
+	height:auto;
 }
-
-.loader span:nth-child(4) {
-    bottom: 0;
-    right: 0;
+@-webkit-keyframes tp-rotateplane {
+  0% {
+    -webkit-transform: perspective(120px);
+  }
+  50% {
+    -webkit-transform: perspective(120px) rotateY(180deg);
+  }
 }
-
-@-webkit-keyframes loader {
-    0%, 10%, 100% {
-        width: 40px;
-        height: 40px;
-    }
-    65% {
-        width: 80px;
-        height: 80px;
-    }
+@keyframes tp-rotateplane {
+  0% {
+    transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+    -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+  }
+  50% {
+    transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+    -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+  }
 }
-
-@-webkit-keyframes loaderBlock {
-    0%, 30% {
-        -webkit-transform: rotate(0);
-        -moz-transform: rotate(0);
-        -ms-transform: rotate(0);
-        -o-transform: rotate(0);
-        transform: rotate(0);
-    }
-    55% {
-        opacity: 1;
-    }
-    100% {
-        -webkit-transform: rotate(90deg);
-        -moz-transform: rotate(90deg);
-        -ms-transform: rotate(90deg);
-        -o-transform: rotate(90deg);
-        transform: rotate(90deg);
-    }
-}
-
-@-webkit-keyframes loaderBlockInverse {
-    0%, 20% {
-        -webkit-transform: rotate(0);
-        -moz-transform: rotate(0);
-        -ms-transform: rotate(0);
-        -o-transform: rotate(0);
-        transform: rotate(0);
-    }
-    55% {
-        opacity: 1;
-    }
-    100% {
-        -webkit-transform: rotate(-90deg);
-        -moz-transform: rotate(-90deg);
-        -ms-transform: rotate(-90deg);
-        -o-transform: rotate(-90deg);
-        transform: rotate(-90deg);
-    }
-}
-
-@keyframes loader {
-    0%, 10%, 100% {
-        width: 40px;
-        height: 40px;
-    }
-    65% {
-        width: 80px;
-        height: 80px;
-    }
-}
-
-@keyframes loaderBlock {
-    0%, 30% {
-        -webkit-transform: rotate(0);
-        -moz-transform: rotate(0);
-        -ms-transform: rotate(0);
-        -o-transform: rotate(0);
-        transform: rotate(0);
-    }
-    55% {
-        opacity: 1;
-    }
-    100% {
-        -webkit-transform: rotate(90deg);
-        -moz-transform: rotate(90deg);
-        -ms-transform: rotate(90deg);
-        -o-transform: rotate(90deg);
-        transform: rotate(90deg);
-    }
-}
-
-@keyframes loaderBlockInverse {
-
-    0%, 20% {
-        -webkit-transform: rotate(0);
-        -moz-transform: rotate(0);
-        -ms-transform: rotate(0);
-        -o-transform: rotate(0);
-        transform: rotate(0);
-    }
-    55% {
-        opacity: 1;
-    }
-    100% {
-        -webkit-transform: rotate(-90deg);
-        -moz-transform: rotate(-90deg);
-        -ms-transform: rotate(-90deg);
-        -o-transform: rotate(-90deg);
-        transform: rotate(-90deg);
-    }
-}
-
-
-
 /*-------------------
     3 ) General Rulas
 -------------------*/
@@ -1052,13 +932,17 @@ a:focus {
     transform: translate(-50%, -50%);
 }
 .project_controls button.active,
-.filter.active,
 .project_controls button.mixitup-control-active {
     background: #2DAEE0;
     color: #fff;
     box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.3);
 }
 
+.filter.active{
+  background: #2DAEE0;
+  color: #fff;
+  box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.3);
+}
 /*----------------------
     7 ) FIFTH SCREEN   Styles
 ----------------------*/

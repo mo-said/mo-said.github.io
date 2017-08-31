@@ -1,5 +1,5 @@
 /*
---------------------------------------------------------* 
+--------------------------------------------------------*
 
 [Cadeniuc, Main Stylesheet ]
 
@@ -7,7 +7,7 @@
 
     Name         : JOHN - Responsive Onepage Resume Template
 
-    Version      :  1.0 
+    Version      :  1.0
 
     Author       :  Cadeniuc
 
@@ -135,7 +135,7 @@ $(function(){
                 }
             });
         };
-        // Call the functions 
+        // Call the functions
         magnifPopup();
 
 
@@ -183,7 +183,7 @@ $(function(){
             time: 1000
         });
 
-         
+
 /*
          * ----------------------------------------------------------------------------------------
          *  FORM AJAX
@@ -196,37 +196,7 @@ $(function(){
          *  FORM AJAX
          * ----------------------------------------------------------------------------------------
          */
-         $("form").on("submit", function(e) {
-            e.preventDefault();
-            var form = $(this);
-            var button = form.children("button[type='submit']");
-            var msg = form.serialize();
-            var submitButton = form.children("button[type='submit']").html();
-            if (submitButton == undefined) {
-                var idForm = form.attr("id");
-                var button = $("#" + idForm + " button");
-                var submitButton = $("#" + idForm + " button").html();
-            }
-            $.ajax({
-                type: 'POST',
-                url: "php/mail.php",
-                data: msg,
-                success: function(data) {
-                    if (data != "") {
-                        $("input, textarea").val("");
-                        button.html(data).addClass("");
-                        setTimeout(function() {
-                            button.html(submitButton).removeClass("");
-                        }, 5000);
-                        $('.sent_message').fadeIn();
-                        $('.sent_message').fadeOut(5000);
-                    }
-                },
-                error: function(xhr, str) {
-                    alert('Error: ' + xhr.responseCode);
-                }
-            });
-        });
+
 
 
 });
