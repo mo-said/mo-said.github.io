@@ -5,14 +5,17 @@
 
     Color        : BLUE  ( #00B6F9 )
 
-    Name         : Mohamed Said Mohamed
-    Version      :  1.0
+    Name         : JOHN - Responsive Onepage Resume Template
 
-    Author       :  
+    Version      :  1.0
+    
+ -    Author URI   :  https://themeforest.net/user/cadeniuc
+
+    Author       :  Cadeniuc
 
     Author Email : mohamed.said.ib93@gmail.com
-
---------------------------------------------------------
+  
+  --------------------------------------------------------
 */
 $(function(){
     "use strict";
