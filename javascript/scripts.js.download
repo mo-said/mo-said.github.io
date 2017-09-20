@@ -8,14 +8,14 @@
     Name         : JOHN - Responsive Onepage Resume Template
 
     Version      :  1.0
-    
- -    Author URI   :  https://themeforest.net/user/cadeniuc
 
     Author       :  Cadeniuc
 
-    Author Email : mohamed.said.ib93@gmail.com
-  
-  --------------------------------------------------------
+    Author URI   :  https://themeforest.net/user/cadeniuc
+
+    Author Email : icadeniuc16@gmail.com
+
+--------------------------------------------------------
 */
 $(function(){
     "use strict";
