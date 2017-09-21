@@ -1023,7 +1023,7 @@ a:focus {
     box-shadow: none;
     border-bottom: 1px solid #2daee0;
     margin-bottom: 25px;
-    text-transform: uppercase;
+/*     text-transform: uppercase; */
 }
 .input_form textarea {
     max-width: 100%;
