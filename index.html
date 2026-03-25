@@ -10,7 +10,7 @@
   :root {
     --ink: #edeae4;
     --ink2: #b0ada6;
-    --ink3: #6b6864;
+    --ink3: #969290;
     --canvas: #111010;
     --surface: #191817;
     --accent: #e07a52;
@@ -57,7 +57,7 @@
     font-weight: 400;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--ink3);
+    color: #969290;
     text-decoration: none;
     transition: color 0.2s;
   }
@@ -118,7 +118,7 @@
     gap: 0.5rem;
     padding: 0.875rem 2rem;
     background: var(--accent);
-    color: #fff;
+    color: #111010;
     text-decoration: none;
     font-size: 0.85rem;
     font-weight: 500;
@@ -1375,7 +1375,9 @@
   <span>Senior UI/UX Software Engineer · Alexandria, Egypt</span>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+
+<script>
   // Intersection observer for fade-up animations
   const obs = new IntersectionObserver((entries) => {
     entries.forEach(e => {
@@ -1384,7 +1386,7 @@
         obs.unobserve(e.target);
       }
     });
-  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
 
   document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
 
@@ -1398,10 +1400,10 @@
         barObs.unobserve(e.target);
       }
     });
-  }, { threshold: 0.2 });
+  }, { threshold: 0.1 });
   document.querySelectorAll('.techstack-grid').forEach(el => barObs.observe(el));
 
-  
+  // Nav active state
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-links a');
   const scrollObs = new IntersectionObserver((entries) => {
@@ -1409,15 +1411,19 @@
       if (e.isIntersecting) {
         const id = e.target.id;
         navLinks.forEach(a => {
-          a.style.color = a.getAttribute('href') === '#' + id
-            ? 'var(--ink)'
-            : '';
+          a.style.color = a.getAttribute('href') === '#' + id ? 'var(--ink)' : '';
         });
       }
     });
   }, { threshold: 0.4 });
   sections.forEach(s => scrollObs.observe(s));
 
+  // Fallback: if IntersectionObserver doesn't fire (e.g. file:// protocol),
+  // show all fade-up elements after a short delay
+  setTimeout(() => {
+    document.querySelectorAll('.fade-up:not(.in)').forEach(el => el.classList.add('in'));
+    document.querySelectorAll('.ts-fill:not(.animated)').forEach(bar => bar.classList.add('animated'));
+  }, 300);
 </script>
 </body>
 </html>
